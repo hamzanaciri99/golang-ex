@@ -6,16 +6,14 @@ import (
 	"os"
 	"bufio"
 	"math/rand"
-	"time"
 	"io"
 	"strings"
-	"github.com/hamzanaciri99/goland-ex/util"
+	"github.com/hamzanaciri99/golang-ex/util"
 )
 
 //Define and initialize flags
 var (
 	shuffle bool
-
 )
 func flagsInit() {
 	flag.BoolVar(&shuffle, "shuffle", false, "set to true to shuffle the quiz order")
@@ -23,6 +21,7 @@ func flagsInit() {
 
 func init() {
 	flagsInit()
+	flag.Parse()
 }	
 
 type Quiz struct {
@@ -30,14 +29,13 @@ type Quiz struct {
 }
 
 func Suffle[T interface{}](q []T) {
-	rand.Seed(time.Now().UnixNano())
 	rand.Shuffle(len(q), func(i, j int) { q[i], q[j] = q[j], q[i] })
 }
 
 func main() {
-	flag.Parse()
+	
 
-	s, err := os.ReadFile("/Users/azmah/Desktop/hamzanaciri99/golang-exercices/quiz-game/quiz.csv")
+	s, err := os.ReadFile("/Users/azmah/Desktop/hamzanaciri99/golang-exercices/quizgame/quiz.csv")
 	util.CheckError(err)
 
 	lines := strings.Split(string(s), "\n")
