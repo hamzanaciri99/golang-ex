@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Title}}</title>
+  <style>
+
+    .wrapper {
+      margin: 5% auto;
+      width: 800px;
+      text-align: center;
+      background-color: rgba(228, 248, 165, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      box-shadow: 0px 0px 10px rgba(209, 237, 153, 0.6);
+    }
+
+    hr {
+      opacity: 0.3;
+    }
+
+    .options {
+      text-align: left;
+    }
+
+    a.option {
+      display: block;
+      text-decoration: none;
+    }
+
+    a.option:link, a.option:hover, a.option:active {
+      color: rgb(25, 162, 248);
+    }
+
+    a.option:visited {
+      color: rgb(132, 2, 253)
+    }
+
+    a.option:before {
+      content: "- ";
+    }
+
+    .end {
+      font-weight: bold;
+      font-size: large;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 class="title">{{.Title}}</h1>
+    <div class="content">{{.Content}}</div>
+    <hr>
+    <div class="options">{{.Options}}</div>
+  </div>
+</body>
+</html>
